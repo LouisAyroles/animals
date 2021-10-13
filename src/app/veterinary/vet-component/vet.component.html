@@ -1,0 +1,13 @@
+<div class="horizontal">
+  <ng-template fxFlex="25%" ngFor let-vet [ngForOf]="veterinarians" let-i="index">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>{{vet.firstName}}</mat-card-title>
+        <mat-card-subtitle>{{vet.lastName}}</mat-card-subtitle>
+      </mat-card-header>
+      <img class="img-responsive img-thumbnail ratio-4-3" mat-card-image src={{vet.photo}} alt="{{vet.firstName}}">
+      <mat-card-content>
+      </mat-card-content>
+    </mat-card>
+  </ng-template>
+</div>
