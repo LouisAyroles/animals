@@ -8,3 +8,36 @@
 .example-full-width {
   width: 100%;
 }
+
+.image{
+  max-width: 600px;
+  width:600px;
+  height: 480px;
+  display: flex;
+  justify-content: center;
+  & img{
+    border-radius: 25px;
+  }
+}
+
+.details{
+  padding-top: 8rem;
+}
+
+.container{
+  width: 75%;
+}
+.example-full-width {
+  width: 100%;
+}
+
+button{
+  float: right;
+  margin-left: 1rem;
+}
+
+.button{
+  float: right;
+  margin: 2rem;
+}
+

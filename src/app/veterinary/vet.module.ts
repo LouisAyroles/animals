@@ -5,6 +5,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatCardModule} from "@angular/material/card";
 import {VetComponent} from "./vet-component/vet.component";
 import {VetRoutingModule} from "./vet-routing.module";
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
 
 
 
@@ -17,7 +19,9 @@ import {VetRoutingModule} from "./vet-routing.module";
     CommonModule,
     MatToolbarModule,
     FlexLayoutModule,
-    VetRoutingModule
+    VetRoutingModule,
+    MatIconModule,
+    MatButtonModule
   ]
 })
 export class VetModule { }

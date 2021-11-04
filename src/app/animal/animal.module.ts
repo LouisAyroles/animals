@@ -6,16 +6,20 @@ import { AnimalListComponent } from './animal-list/animal-list.component';
 import { AnimalRootComponent } from './animal-root/animal-root.component';
 import {RouterModule} from "@angular/router";
 import {AnimalRoutingModule} from "./animal-routing.module";
-import { AnimalDetailComponent } from './animal-detail/animal-detail.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {FlexLayoutModule} from "@angular/flex-layout";
-import {AnimalFormComponent, AnimalSnackComponent} from './animal-form/animal-form.component';
+import {
+  AnimalFormComponent,
+  AnimalSnackComponent,
+  DeleteConfirmDialog
+} from './animal-form/animal-form.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {FormsModule} from "@angular/forms";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 @NgModule({
@@ -23,9 +27,9 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     AnimalComponent,
     AnimalListComponent,
     AnimalRootComponent,
-    AnimalDetailComponent,
     AnimalFormComponent,
-    AnimalSnackComponent
+    AnimalSnackComponent,
+    DeleteConfirmDialog
   ],
   imports: [
     MatCardModule,
@@ -39,7 +43,8 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     MatInputModule,
     MatButtonModule,
     FormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
   ],
   exports: [
     AnimalComponent,

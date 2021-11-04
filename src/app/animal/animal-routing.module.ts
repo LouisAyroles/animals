@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {AnimalListComponent} from "./animal-list/animal-list.component";
 import {AnimalRootComponent} from "./animal-root/animal-root.component";
-import {AnimalDetailComponent} from "./animal-detail/animal-detail.component";
 import {AnimalFormComponent} from "./animal-form/animal-form.component";
 
 const animalRoutes: Routes = [{
@@ -18,12 +17,8 @@ const animalRoutes: Routes = [{
     },
   {
     path: ':id',
-    component: AnimalDetailComponent
-  },
-    {
-      path: 'modify/:id',
-      component: AnimalFormComponent
-    }
+    component: AnimalFormComponent
+  }
 ]
 }];
 
