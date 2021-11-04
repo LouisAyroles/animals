@@ -1,0 +1,29 @@
+.image{
+  max-width: 600px;
+  width:600px;
+  height: 480px;
+  display: flex;
+  justify-content: center;
+  & img{
+    border-radius: 25px;
+  }
+}
+
+.details{
+  padding-top: 8rem;
+}
+
+.container{
+  width: 75%;
+}
+.example-full-width {
+  width: 100%;
+}
+
+::ng-deep.mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-label {
+  color: black !important;
+}
+
+button{
+  float: right;
+}

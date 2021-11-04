@@ -1,0 +1,18 @@
+<div class="my-card">
+  <mat-card class="mat-elevation-z4">
+    <mat-card-header>
+      <mat-card-title>{{animal?.name}}</mat-card-title>
+      <mat-card-subtitle>{{animal?.species}}</mat-card-subtitle>
+    </mat-card-header>
+    <img class="img-responsive img-thumbnail ratio-4-3" mat-card-image src={{animal?.photo}} alt="{{animal?.name}}">
+    <mat-card-content>
+      <p>
+        {{animal?.comment}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a [routerLink]="['/animals/modify',animal.id]" mat-button>Modifier</a>
+      <a [routerLink]="['/animals/',animal.id]" mat-button>Détails</a>
+    </mat-card-actions>
+  </mat-card>
+</div>

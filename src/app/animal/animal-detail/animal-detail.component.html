@@ -1,0 +1,70 @@
+<mat-toolbar color="primary">
+  {{animal.name}}
+  <div fxFlex fxLayoutAlign="flex-end center">
+    <a routerLink="/" mat-button>Accueil</a>
+  </div>
+</mat-toolbar>
+
+<div class="details" fxLayout="row wrap">
+  <div class="image" fxFlex="50%" fxFlex.xs="100%">
+      <img src="{{animal.photo}}" alt="{{animal.name}}">
+  </div>
+
+  <div fxFlex="50%" fxFlex.xs="100%" >
+    <div class="container">
+      <form >
+        <p>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>{{animal.name}}</mat-label>
+            <input matInput disabled name="name">
+            <mat-icon color="primary" matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>{{animal.species}}</mat-label>
+            <input matInput disabled name="species">
+            <mat-icon color="primary" matSuffix>adb</mat-icon>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>{{animal.comment}}</mat-label>
+            <textarea matInput disabled name="comment"></textarea>
+            <mat-icon color="primary" matSuffix>textsms</mat-icon>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>{{animal.veterinarian}}</mat-label>
+            <input matInput disabled name="veterinarians">
+            <mat-icon color="primary" matSuffix>person_pin</mat-icon>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>{{animal.email}}</mat-label>
+            <input matInput disabled name="email">
+            <mat-icon color="primary" matSuffix>email</mat-icon>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>{{animal.phoneNumber}}</mat-label>
+            <input matInput disabled name="phone">
+            <mat-icon color="primary" matSuffix>phone</mat-icon>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>{{animal.photo}}</mat-label>
+            <textarea matInput disabled name="photo"></textarea>
+            <mat-icon color="primary" matSuffix>insert_photo</mat-icon>
+          </mat-form-field>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+
+

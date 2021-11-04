@@ -1,0 +1,62 @@
+<mat-toolbar color="primary">
+  Création
+  <div fxFlex fxLayoutAlign="flex-end center">
+    <a routerLink="/" mat-button>Accueil</a>
+  </div>
+</mat-toolbar>
+
+<div class="my-form">
+<form (submit)="onSubmit()" >
+  <p>
+    <mat-form-field [style.width.px]=800 appearance="outline">
+      <mat-label>Nom</mat-label>
+      <input matInput placeholder="Son nom" [(ngModel)]="animal.name" name="name">
+      <mat-icon color="primary" matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Espece</mat-label>
+      <input matInput placeholder="Especes" [(ngModel)]="animal.species" name="species">
+      <mat-icon color="primary" matSuffix>adb</mat-icon>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Commentaire</mat-label>
+      <textarea matInput placeholder="Commentaire" [(ngModel)]="animal.comment" name="comment"></textarea>
+      <mat-icon color="primary" matSuffix>textsms</mat-icon>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Veterinaire</mat-label>
+      <input matInput placeholder="Veterinaire" [(ngModel)]="animal.veterinarian" name="veterinarians">
+      <mat-icon color="primary" matSuffix>person_pin</mat-icon>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>E-mail</mat-label>
+      <input matInput placeholder="Email" [(ngModel)]="animal.email" name="email">
+      <mat-icon color="primary" matSuffix>email</mat-icon>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Numéro de téléphone</mat-label>
+      <input matInput placeholder="Phone number" [(ngModel)]="animal.phoneNumber" name="phone">
+      <mat-icon color="primary" matSuffix>phone</mat-icon>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Photo</mat-label>
+      <textarea matInput placeholder="Photo" [(ngModel)]="animal.photo" name="photo"></textarea>
+      <mat-icon color="primary" matSuffix>insert_photo</mat-icon>
+    </mat-form-field>
+  </p>
+  <button type="button" *ngIf="isCreation" (click)="onSubmit()" routerLink="/animals"  mat-raised-button color="primary">Save</button>
+  <button type="button" *ngIf="!isCreation" (click)="onSubmit()" routerLink="/animals" mat-raised-button color="primary">Update</button>
+</form>
+</div>

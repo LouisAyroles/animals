@@ -1,6 +1,11 @@
-<div class="horizontal">
-  <ng-template fxFlex="25%" ngFor let-vet [ngForOf]="veterinarians" let-i="index">
-    <mat-card class="example-card">
+<mat-toolbar color="primary">
+  Les vétérinaires
+</mat-toolbar>
+
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+  <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let vet of veterinarians">
+    <mat-card>
       <mat-card-header>
         <mat-card-title>{{vet.firstName}}</mat-card-title>
         <mat-card-subtitle>{{vet.lastName}}</mat-card-subtitle>
@@ -9,5 +14,6 @@
       <mat-card-content>
       </mat-card-content>
     </mat-card>
-  </ng-template>
+  </div>
+    </div>
 </div>

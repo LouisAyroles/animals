@@ -1,9 +1,4 @@
-.content{
-  width: 90%;
-  margin-left:auto;
-  margin-right:auto;
-  padding-top: 2%;
-}
+@use '~@angular/material' as mat;
 mat-card > img{
   object-fit: cover;
   height: 350px;

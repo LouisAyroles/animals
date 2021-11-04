@@ -1,10 +1,9 @@
-
 {
   "animals": [
     {
       "id": 1,
       "name": "Idéfix",
-      "species": "dog",
+      "species": "doggy",
       "veterinarian": "Panoramix D'Armorique",
       "comment": "Développe une allergie à la potion magique.",
       "photo": "https://animalaxy.fr/wp-content/uploads/2017/09/776px-Westie_Chloe.jpg",
@@ -30,6 +29,46 @@
       "photo": "https://upload.wikimedia.org/wikipedia/commons/4/41/Fox_Squirrel_%2814539535789%29.jpg",
       "email": "test3@gmail.com",
       "phoneNumber": "06.12.34.56.80"
+    },
+    {
+      "id": 4,
+      "name": "Dina",
+      "species": "border-collie",
+      "veterinarian": "Ged Épervier",
+      "comment": "Trés douce.",
+      "photo": "https://www.illicoveto.com/wp-content/uploads/Border-Collie-768x958.jpg",
+      "email": "test3@gmail.com",
+      "phoneNumber": "06.12.34.56.80"
+    },
+    {
+      "name": "Roger",
+      "species": "Herisson",
+      "comment": "Il est gentil.",
+      "veterinarian": "Ged",
+      "email": "test@mail.com",
+      "phoneNumber": "06.06.06.06.06",
+      "photo": "https://nord.lpo.fr/wp-content/uploads/2020/07/herisson-James-C-flickr-1024x684.jpg",
+      "id": 5
+    },
+    {
+      "name": "Edwige",
+      "species": "hibou",
+      "comment": "La plus belle des chouettes",
+      "veterinarian": "Ged",
+      "email": "test@mail.com",
+      "phoneNumber": "06.06.06.06.06",
+      "photo": "https://file1.telestar.fr/var/telestar/storage/images/3/0/7/1/3071805/le-harfang-cette-mysterieuse-chouette-des-neiges.jpg?alias=exact1024x768_l",
+      "id": 6
+    },
+    {
+      "name": "Baloo",
+      "species": "labrador",
+      "comment": "Il est trop gentil.",
+      "veterinarian": "Ged",
+      "email": "test@mail.com",
+      "phoneNumber": "06.06.06.06.06",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/2/26/YellowLabradorLooking_new.jpg",
+      "id": 7
     }
   ],
   "veterinarians": [

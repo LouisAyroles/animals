@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  Les animaux
+</mat-toolbar>
+
+<div class="button">
+  <button routerLink="create" mat-fab color="primary" >
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let animal of animals">
+      <animal-component [animal]="animal"></animal-component>
+    </div>
+  </div>
+</div>
