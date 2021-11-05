@@ -8,11 +8,7 @@ import {RouterModule} from "@angular/router";
 import {AnimalRoutingModule} from "./animal-routing.module";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {FlexLayoutModule} from "@angular/flex-layout";
-import {
-  AnimalFormComponent,
-  AnimalSnackComponent,
-  DeleteConfirmDialog
-} from './animal-form/animal-form.component';
+import {AnimalFormComponent} from './animal-form/animal-form.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
@@ -28,8 +24,6 @@ import {MatDialogModule} from "@angular/material/dialog";
     AnimalListComponent,
     AnimalRootComponent,
     AnimalFormComponent,
-    AnimalSnackComponent,
-    DeleteConfirmDialog
   ],
   imports: [
     MatCardModule,

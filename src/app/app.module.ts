@@ -12,10 +12,16 @@ import {AnimalModule} from "./animal/animal.module";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {VetModule} from "./veterinary/vet.module";
+import { SnackBarComponent } from './utils/snack-bar/snack-bar.component';
+import { DeleteDialogComponent } from './utils/delete-dialog/delete-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SnackBarComponent,
+    DeleteDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +32,9 @@ import {VetModule} from "./veterinary/vet.module";
     HttpClientModule,
     FlexLayoutModule,
     MatToolbarModule,
-    VetModule
+    VetModule,
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [AnimalService,
   VetService],

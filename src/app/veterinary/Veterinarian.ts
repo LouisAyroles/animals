@@ -1,6 +1,6 @@
-export interface Veterinarian {
-  id: number,
-  firstName: string,
-  lastName: string,
-  photo: string,
+export class Veterinarian {
+  id: number;
+  firstName: string;
+  lastName: string;
+  photo: string;
 }

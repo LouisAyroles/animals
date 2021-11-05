@@ -27,6 +27,9 @@
       <img class="img-responsive img-thumbnail ratio-4-3" mat-card-image src={{vet.photo}} alt="{{vet.firstName}}">
       <mat-card-content>
       </mat-card-content>
+      <mat-card-actions>
+        <a [routerLink]="['/veterinarians',vet.id]" mat-button>Modifier</a>
+      </mat-card-actions>
     </mat-card>
   </div>
     </div>

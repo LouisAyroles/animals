@@ -16,8 +16,18 @@ export class VetService {
     return this.httpClient.get<Veterinarian[]>('/api/veterinarians');
   }
 
-  public getVeterinarianByIndex(index: number) : Observable<Veterinarian> {
-    return this.httpClient.get<Veterinarian>('/api/veterinarian/' + index);
+  public getVeterinarianByIndex(index: string) : Observable<Veterinarian> {
+    return this.httpClient.get<Veterinarian>('/api/veterinarians/' + index);
+  }
+
+  public delete (id: number) : Observable<Veterinarian> {
+    return this.httpClient.delete<Veterinarian>(`/api/veterinarians/${id}`);
+  }
+  public create (data: Veterinarian) : Observable<Veterinarian> {
+    return this.httpClient.post<Veterinarian>(`/api/veterinarians/`, data);
+  }
+  public update (data: Veterinarian) : Observable<Veterinarian> {
+    return this.httpClient.put<Veterinarian>(`/api/veterinarians/${data.id}`, data);
   }
 
 }

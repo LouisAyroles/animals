@@ -1,5 +1,6 @@
 <mat-toolbar color="primary">
-  {{animal.name}}
+  <p *ngIf="isCreation"> Création </p>
+  <p *ngIf="!isCreation"> {{animal.name}}</p>
 </mat-toolbar>
 
 <div class="button">
@@ -15,58 +16,65 @@
 
   <div fxFlex="50%" fxFlex.xs="100%" >
     <div class="container">
-      <form >
+      <form #animalForm="ngForm" (submit)="onSubmit(animalForm.form)">
         <p>
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Nom</mat-label>
-            <input matInput placeholder="Son nom" [(ngModel)]="animal.name" name="name" required>
+            <input matInput placeholder="Son nom" [(ngModel)]="animal.name" name="name" required #nameControle="ngModel">
             <mat-icon color="primary" matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint *ngIf="nameControle.errors?.required" >Le nom est requis.</mat-hint>
           </mat-form-field>
         </p>
         <p>
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Espece</mat-label>
-            <input matInput placeholder="Especes" [(ngModel)]="animal.species" name="species">
+            <input matInput placeholder="Especes" [(ngModel)]="animal.species" name="species" required #speciesControle="ngModel">
             <mat-icon color="primary" matSuffix>adb</mat-icon>
+            <mat-hint *ngIf="speciesControle.errors?.required" >L'espece est requise.</mat-hint>
           </mat-form-field>
         </p>
         <p>
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Commentaire</mat-label>
-            <textarea matInput placeholder="Commentaire" [(ngModel)]="animal.comment" name="comment"></textarea>
+            <textarea matInput placeholder="Commentaire" [(ngModel)]="animal.comment" name="comment" required #commentControle="ngModel"></textarea>
             <mat-icon color="primary" matSuffix>textsms</mat-icon>
+            <mat-hint *ngIf="commentControle.errors?.required" >Le commentaire est requis.</mat-hint>
           </mat-form-field>
         </p>
         <p>
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Veterinaire</mat-label>
-            <input matInput placeholder="Veterinaire" [(ngModel)]="animal.veterinarian" name="veterinarians">
+            <input matInput placeholder="Veterinaire" [(ngModel)]="animal.veterinarian" name="veterinarians" required #vetControle="ngModel">
             <mat-icon color="primary" matSuffix>person_pin</mat-icon>
+            <mat-hint *ngIf="vetControle.errors?.required" >Le veterinaire est requis.</mat-hint>
           </mat-form-field>
         </p>
         <p>
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>E-mail</mat-label>
-            <input matInput placeholder="Email" [(ngModel)]="animal.email" name="email">
+            <input matInput placeholder="Email" [(ngModel)]="animal.email" name="email" required #emailControle="ngModel">
             <mat-icon color="primary" matSuffix>email</mat-icon>
+            <mat-hint *ngIf="emailControle.errors?.required" >L'email est requis.</mat-hint>
           </mat-form-field>
         </p>
         <p>
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Numéro de téléphone</mat-label>
-            <input matInput placeholder="Phone number" [(ngModel)]="animal.phoneNumber" name="phone">
+            <input matInput placeholder="Phone number" [(ngModel)]="animal.phoneNumber" name="phone" required #phoneControle="ngModel">
             <mat-icon color="primary" matSuffix>phone</mat-icon>
+            <mat-hint *ngIf="phoneControle.errors?.required" >Le téléphone est requis.</mat-hint>
           </mat-form-field>
         </p>
         <p>
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Photo</mat-label>
-            <textarea matInput placeholder="Photo" [(ngModel)]="animal.photo" name="photo" required></textarea>
+            <textarea matInput placeholder="Photo" [(ngModel)]="animal.photo" name="photo" required #photoControle="ngModel"></textarea>
             <mat-icon color="primary" matSuffix>insert_photo</mat-icon>
+            <mat-hint *ngIf="photoControle.errors?.required" >La photo est requise.</mat-hint>
           </mat-form-field>
         </p>
-        <button type="button" *ngIf="isCreation" (click)="onSubmit()"  mat-raised-button color="primary">Save</button>
-        <button type="button" *ngIf="!isCreation" (click)="onSubmit()" mat-raised-button color="primary">Update</button>
+        <button type="button" *ngIf="isCreation" (click)="onSubmit(animalForm.form)"  mat-raised-button color="primary">Save</button>
+        <button type="button" *ngIf="!isCreation" (click)="onSubmit(animalForm.form)" mat-raised-button color="primary">Update</button>
         <button type="button" (click)="onDelete()" mat-raised-button color="primary">Delete</button>
       </form>
     </div>

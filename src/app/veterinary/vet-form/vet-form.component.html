@@ -1,0 +1,50 @@
+<mat-toolbar color="primary">
+  <p *ngIf="isCreation"> Création </p>
+  <p *ngIf="!isCreation"> {{vet.firstName}} {{vet.lastName}}</p>
+</mat-toolbar>
+
+<div class="button">
+  <button routerLink="/" mat-fab color="primary" >
+    <mat-icon>home</mat-icon>
+  </button>
+</div>
+
+<div class="details" fxLayout="row wrap">
+  <div class="image" fxFlex="50%" fxFlex.xs="100%">
+    <img src="{{vet.photo}}" onerror="this.onerror=null; this.src='https://rlv.zcache.fr/creez_votre_propre_affiche-rfe1de505846b4b0dada5083dad98f133_wvk_8byvr_540.webp'" alt="{{vet.lastName}}">
+  </div>
+
+  <div fxFlex="50%" fxFlex.xs="100%" >
+    <div class="container">
+      <form #vetForm="ngForm" (submit)="onSubmit(vetForm.form)">
+        <p>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Nom</mat-label>
+            <input matInput placeholder="Son nom" [(ngModel)]="vet.lastName" name="name" required #nameControle="ngModel">
+            <mat-icon color="primary" matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint *ngIf="nameControle.errors?.required" >Le nom est requis.</mat-hint>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Prénom</mat-label>
+            <input matInput placeholder="Prénom" [(ngModel)]="vet.firstName" required name="firstName" #firstNameControle="ngModel">
+            <mat-icon color="primary" matSuffix>adb</mat-icon>
+            <mat-hint *ngIf="firstNameControle.errors?.required" >Le prénom est requis.</mat-hint>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Photo</mat-label>
+            <input matInput placeholder="Prénom" [(ngModel)]="vet.photo" required name="photo" #photoControle="ngModel">
+            <mat-icon color="primary" matSuffix>photo</mat-icon>
+            <mat-hint *ngIf="firstNameControle.errors?.required" >La photo est requise.</mat-hint>
+          </mat-form-field>
+        </p>
+        <button type="button" *ngIf="isCreation" (click)="onSubmit(vetForm.form)" [disabled]="vetForm.form.invalid" mat-raised-button color="primary">Save</button>
+        <button type="button" *ngIf="!isCreation" (click)="onSubmit(vetForm.form)" mat-raised-button color="primary">Update</button>
+        <button type="button" (click)="onDelete()" mat-raised-button color="primary">Delete</button>
+      </form>
+    </div>
+  </div>
+</div>

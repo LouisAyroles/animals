@@ -7,12 +7,17 @@ import {VetComponent} from "./vet-component/vet.component";
 import {VetRoutingModule} from "./vet-routing.module";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
+import {VetFormComponent} from "./vet-form/vet-form.component";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {FormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
 
 
 
 @NgModule({
   declarations: [
-    VetComponent
+    VetComponent,
+    VetFormComponent
   ],
   imports: [
     MatCardModule,
@@ -21,7 +26,10 @@ import {MatButtonModule} from "@angular/material/button";
     FlexLayoutModule,
     VetRoutingModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule
   ]
 })
 export class VetModule { }

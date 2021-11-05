@@ -1,9 +1,12 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AnimalService} from "../service/animal.service";
 import {Animal} from "../Animal";
-import {MAT_SNACK_BAR_DATA, MatSnackBar, MatSnackBarConfig} from "@angular/material/snack-bar";
+import { MatSnackBar, MatSnackBarConfig} from "@angular/material/snack-bar";
 import {ActivatedRoute, ParamMap, Router  } from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
+import {SnackBarComponent} from "../../utils/snack-bar/snack-bar.component";
+import {DeleteDialogComponent} from "../../utils/delete-dialog/delete-dialog.component";
+import {FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-animal-form',
@@ -24,8 +27,8 @@ export class AnimalFormComponent implements OnInit {
 
   configSuccess: MatSnackBarConfig = {
     panelClass: 'style-success',
-    duration: 1000,
-    horizontalPosition: 'left',
+    duration: 5000,
+    horizontalPosition: 'center',
     verticalPosition: 'bottom'
   };
 
@@ -40,60 +43,35 @@ export class AnimalFormComponent implements OnInit {
     })
   }
 
-  onSubmit() {
-    if (this.isCreation) {
-      this.animalService.create(this.animal).subscribe();
-      this.openSnackBar('La fiche a biene été créée!');
-    } else {
-      this.animalService.update(this.animal).subscribe();
-      this.openSnackBar('La fiche a biene été mise à jour!');
+  onSubmit(form: FormGroup) {
+    if(form.valid) {
+      if (this.isCreation) {
+        this.animalService.create(this.animal).subscribe();
+        this.openSnackBar('La fiche a bien été créée!');
+      } else {
+        this.animalService.update(this.animal).subscribe();
+        this.openSnackBar('La fiche a bien été mise à jour!');
+      }
+      this.router.navigate(['/animals']);
     }
-    this.snackBar.openFromComponent(AnimalSnackComponent, {
-      duration: 5 * 1000,
-    });
-    this.router.navigate(['/animals']);
   }
 
 
   onDelete() {
-    const dialogRef = this.dialog.open(DeleteConfirmDialog);
+    const dialogRef = this.dialog.open(DeleteDialogComponent);
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.animalService.delete(this.animal.id).subscribe();
+        this.openSnackBar('La fiche a bien été mise à supprimées!');
         this.router.navigate(['/animals']);
       }
     });
   }
 
-
-
   openSnackBar(data: any) {
-    this.snackBar.openFromComponent(AnimalSnackComponent, {
+    this.snackBar.openFromComponent(SnackBarComponent, {
       data: data,
       ...this.configSuccess
     });
   }
-}
-
-
-@Component({
-  selector: 'delete-confirm',
-  templateUrl: 'delete-dialog.html',
-})
-export class DeleteConfirmDialog {}
-
-@Component({
-  selector: 'snack-bar',
-  templateUrl: 'snack-bar.html',
-  styles: [
-    `
-    .snackbar-animal {
-      color: white;
-    }
-  `,
-  ],
-})
-export class AnimalSnackComponent {
-  constructor(
-    @Inject(MAT_SNACK_BAR_DATA) public data: any) { }
 }
