@@ -96,9 +96,15 @@
     },
     {
       "lastName": "LeNouveau",
-      "firstName": "Veto2",
+      "firstName": "Veto3",
       "photo": "https://resize1.prod.docfr.doc-media.fr/rcrop/650,380,center-middle/img/var/doctissimo/storage/images/fr/www/animaux/chat/sante-chat/choix-du-veterinaire-pour-son-chat/721191-2-fre-FR/choix-du-veterinaire-pour-son-chat.jpg",
       "id": 3
+    },
+    {
+      "photo": "https://www.filalapat.fr/sites/default/files/inline-images/v%C3%A9t%C3%A9rinaire_confinement.jpg",
+      "lastName": "Vet",
+      "firstName": "Ment",
+      "id": 4
     }
   ]
 }

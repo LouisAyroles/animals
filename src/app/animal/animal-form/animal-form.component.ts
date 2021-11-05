@@ -62,7 +62,7 @@ export class AnimalFormComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.animalService.delete(this.animal.id).subscribe();
-        this.openSnackBar('La fiche a bien été mise à supprimées!');
+        this.openSnackBar('La fiche a bien été supprimée!');
         this.router.navigate(['/animals']);
       }
     });
