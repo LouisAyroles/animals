@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://my-json-server.typicode.com/LouisAyroles/veterinary_api",
+    "target": "https://veterinaryapi.herokuapp.com/",
     "secure": false,
     "pathRewrite": {
       "^/api": ""
