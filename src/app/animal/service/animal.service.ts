@@ -15,20 +15,20 @@ export class AnimalService{
   }
 
   public getAllAnimals() : Observable<Animal[]> {
-    return this.httpClient.get<Animal[]>(this.API_URL + '/animals');
+    return this.httpClient.get<Animal[]>(this.API_URL + 'animals');
   }
 
   public getAnimalByIndex(index: string) : Observable<Animal> {
-    return this.httpClient.get<Animal>(this.API_URL + '/animals/' + index);
+    return this.httpClient.get<Animal>(this.API_URL + 'animals/' + index);
   }
 
   public delete (id: number) : Observable<Animal> {
-    return this.httpClient.delete<Animal>(this.API_URL + `/animals/${id}`);
+    return this.httpClient.delete<Animal>(this.API_URL + `animals/${id}`);
   }
   public create (data: Animal) : Observable<Animal> {
-    return this.httpClient.post<Animal>(this.API_URL + `/animals/`, data);
+    return this.httpClient.post<Animal>(this.API_URL + `animals/`, data);
   }
   public update (data: Animal) : Observable<Animal> {
-    return this.httpClient.put<Animal>(this.API_URL + `/animals/${data.id}`, data);
+    return this.httpClient.put<Animal>(this.API_URL + `animals/${data.id}`, data);
   }
 }

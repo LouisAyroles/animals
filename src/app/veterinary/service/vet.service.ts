@@ -16,21 +16,21 @@ export class VetService {
   constructor(private httpClient: HttpClient) { }
 
   public getAllVeterinarians() : Observable<Veterinarian[]> {
-    return this.httpClient.get<Veterinarian[]>(this.API_URL + '/veterinarians');
+    return this.httpClient.get<Veterinarian[]>(this.API_URL + 'veterinarians');
   }
 
   public getVeterinarianByIndex(index: string) : Observable<Veterinarian> {
-    return this.httpClient.get<Veterinarian>(this.API_URL + '/veterinarians/' + index);
+    return this.httpClient.get<Veterinarian>(this.API_URL + 'veterinarians/' + index);
   }
 
   public delete (id: number) : Observable<Veterinarian> {
-    return this.httpClient.delete<Veterinarian>(this.API_URL + `/veterinarians/${id}`);
+    return this.httpClient.delete<Veterinarian>(this.API_URL + `veterinarians/${id}`);
   }
   public create (data: Veterinarian) : Observable<Veterinarian> {
-    return this.httpClient.post<Veterinarian>(this.API_URL + `/veterinarians/`, data);
+    return this.httpClient.post<Veterinarian>(this.API_URL + `veterinarians/`, data);
   }
   public update (data: Veterinarian) : Observable<Veterinarian> {
-    return this.httpClient.put<Veterinarian>(this.API_URL + `/veterinarians/${data.id}`, data);
+    return this.httpClient.put<Veterinarian>(this.API_URL + `veterinarians/${data.id}`, data);
   }
 
 }
