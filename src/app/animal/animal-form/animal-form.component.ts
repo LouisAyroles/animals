@@ -45,14 +45,16 @@ export class AnimalFormComponent implements OnInit {
 
   onSubmit(form: FormGroup) {
     if(form.valid) {
+      const onSave = () => {
+        this.router.navigate(['/animals']);
+      };
       if (this.isCreation) {
-        this.animalService.create(this.animal).subscribe();
+        this.animalService.create(this.animal).subscribe(onSave);
         this.openSnackBar('La fiche a bien été créée!');
       } else {
-        this.animalService.update(this.animal).subscribe();
+        this.animalService.update(this.animal).subscribe(onSave);
         this.openSnackBar('La fiche a bien été mise à jour!');
       }
-      this.router.navigate(['/animals']);
     }
   }
 

@@ -51,14 +51,17 @@ export class VetFormComponent implements OnInit {
 
   onSubmit(form: FormGroup) {
     if(form.valid){
+      const onSave = () => {
+        this.router.navigate(['/veterinarians']);
+      };
+
       if (this.isCreation) {
-        this.vetService.create(this.vet).subscribe();
+        this.vetService.create(this.vet).subscribe(onSave);
         this.openSnackBar('La fiche a biene été créée!');
       } else {
-        this.vetService.update(this.vet).subscribe();
+        this.vetService.update(this.vet).subscribe(onSave);
         this.openSnackBar('La fiche a biene été mise à jour!');
       }
-      this.router.navigate(['/veterinarians']);
     }
   }
 
